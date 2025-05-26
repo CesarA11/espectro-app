@@ -51,7 +51,7 @@ ax.axhline(P_ruido_dBm, color="k", linestyle="--", label=f"Ruido térmico: {P_ru
 ax.set_xlabel("Frecuencia (MHz)")
 ax.set_ylabel("Potencia (dBm)")
 ax.set_title("Espectro de Señales con Ruido Térmico")
-max_p = np.nanmax([s["P"] for s in señales] + [1])
+max_p = np.nanmax([s["P"] for s in senales] + [1])
 ax.set_ylim(P_ruido_dBm - 10, 10 * np.log10(max_p) + 40)
 ax.grid(True)
 ax.legend()
