@@ -1,19 +1,21 @@
-# 📡 Aplicación de Gráfico de Espectro
+# Aplicación de Gráfico de Espectro
 
-Esta aplicación permite visualizar señales en el espectro radioeléctrico a partir de parámetros como frecuencia central, ancho de banda, potencia y temperatura.
-
----
-
-## 🚀 Funcionalidades
-
-- Gráfica del ruido térmico en función de la temperatura.
-- Visualización de tres señales distintas en el espectro.
-- Cálculo de niveles de potencia y SNR.
-- Interfaz móvil creada en App Inventor, conectada a backend con PythonAnywhere.
+Esta aplicación permite visualizar señales en el espectro radioeléctrico, incluyendo el cálculo del ruido térmico en función de la temperatura y la representación gráfica de hasta tres señales con diferentes parámetros.
 
 ---
 
-## 📲 ¿Cómo usarla?
+## Funcionalidades
+
+- Cálculo del nivel de ruido térmico con base en la temperatura (K).
+- Visualización simultánea de hasta 3 señales.
+- Cálculo del espectro en potencia (dBm).
+- Gráfico con las señales y su conexión al piso de ruido.
+- Interfaz móvil opcional mediante MIT App Inventor conectada al backend.
+- También ejecutable desde cualquier navegador a través de [Streamlit Cloud](https://espectro-app-et4hxc9tsyxaz8subsdb7k.streamlit.app/).
+
+---
+
+## ¿Cómo usarla?
 
 1. Desde tu celular abre la aplicación App Inventor conectada.
 2. Ingresa:
@@ -26,39 +28,18 @@ Esta aplicación permite visualizar señales en el espectro radioeléctrico a pa
 
 ---
 
-## 🔧 Tecnologías utilizadas
+## Tecnologías utilizadas
 
-- 📱 MIT App Inventor (Interfaz móvil)
-- 🐍 PythonAnywhere (Backend en Python)
-- 🔗 HTTP Requests
-- 📊 Matplotlib (para graficar señales)
-
----
-
-## 🛠 Instalación del backend local
-
-```bash
-git clone https://github.com/tu-usuario/espectro-app.git
-cd espectro-app
-pip install -r requirements.txt
-python app.py
-```
+- MIT App Inventor (Interfaz móvil)
+- PythonAnywhere (Backend en Python)
+- HTTP Requests
+- Matplotlib (para graficar señales)
 
 ---
 
-## 📷 Capturas de pantalla
+## Autor
 
-(Agrega imágenes aquí si quieres mostrar la app o la gráfica generada)
+**Cesar Ivan Aguilar Huerfa** – Tecnologia en Sistematizacion de Datos
+Universidad Distrital Francisco Jose de Caldas – Redes Inalámbricas
 
----
 
-## 👨‍💻 Autor
-
-**César** – Estudiante de Ingeniería en Telecomunicaciones  
-Universidad X – Redes Inalámbricas
-
----
-
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT.
