@@ -17,12 +17,13 @@ for i in range(3):
         senales.append({"Fc": fc, "BW": bw, "P": pot})
 
 # Constante de Boltzmann
-k = 1.38e-23
+k = 1.38e-23  # J/K
 
-# Cálculo de ruido térmico (en dBm)
-P_ruido = k * temperatura * 1  # BW se considera en Hz (1 Hz aquí)
-P_ruido = max(P_ruido, 1e-20)
-P_ruido_dBm = 10 * np.log10(P_ruido) + 30
+# Cálculo del ruido térmico para el mayor BW ingresado
+BW_max_Hz = max([s["BW"] for s in senales]) * 1e6  # Convertir de MHz a Hz
+P_ruido = k * temperatura * BW_max_Hz  # W
+P_ruido = max(P_ruido, 1e-20)  # evitar log(0)
+P_ruido_dBm = 10 * np.log10(P_ruido) + 30  # convertir a dBm
 
 # Gráfico
 fig, ax = plt.subplots()
