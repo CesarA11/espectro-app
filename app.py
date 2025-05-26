@@ -6,7 +6,7 @@ st.title("Gráfico del Espectro Radioeléctrico")
 
 # Entradas para el usuario
 temperatura = st.number_input("Temperatura (K)", min_value=0.0, value=290.0)
-señales = []
+senales = []
 
 # Formulario para cada señal
 for i in range(3):
@@ -14,7 +14,7 @@ for i in range(3):
         fc = st.number_input(f"Frecuencia central Fc{i+1} (MHz)", value=200 + i * 10)
         bw = st.number_input(f"Ancho de banda BW{i+1} (MHz)", value=10.0)
         pot = st.number_input(f"Potencia{i+1} (mW)", value=1.0)
-        señales.append({"Fc": fc, "BW": bw, "P": pot})
+        senales.append({"Fc": fc, "BW": bw, "P": pot})
 
 # Constante de Boltzmann
 k = 1.38e-23
@@ -27,7 +27,7 @@ P_ruido_dBm = 10 * np.log10(P_ruido) + 30
 # Gráfico
 fig, ax = plt.subplots()
 
-for i, señal in enumerate(señales):
+for i, señal in enumerate(senales):
     fc = señal["Fc"]
     BW = señal["BW"]
     P = señal["P"]
