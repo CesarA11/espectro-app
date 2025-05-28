@@ -2,11 +2,31 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Constante de Boltzmann
+k = 1.38e-23  # J/K
+
+# Encabezado
 st.title("Gráfico del Espectro Radioeléctrico")
 
-# Entradas para el usuario
-temperatura = st.number_input("Temperatura (K)", min_value=0.0, value=290.0)
+# Parámetros generales
+st.header("Parámetros Generales")
+T = st.number_input("Temperatura (K)", value=300.0)
+bw_medidor = st.number_input("Ancho de banda del medidor (Hz)", value=50_000.0)
+ruido_adicional = st.number_input("Ruido adicional del sistema (dB)", value=0.0)
+
+
+# Cálculo físico del ruido térmico
+P_ruido_W = k * T * bw_medidor
+P_ruido_W = max(P_ruido_W, 1e-20)  # evitar log(0)
+P_ruido_dBm = 10 * np.log10(P_ruido_W) + 30 + ruido_adicional
+
+# Mostrar resultado
+st.markdown(f"**Nivel de ruido térmico:** {P_ruido_dBm:.2f} dBm")
+
+# Parámetros de señales
 senales = []
+st.header("Parámetros de Señales")
+
 
 # Formulario para cada señal
 for i in range(3):
@@ -14,17 +34,8 @@ for i in range(3):
         fc = st.number_input(f"Frecuencia central Fc{i+1} (MHz)", value=200 + i * 10)
         bw = st.number_input(f"Ancho de banda BW{i+1} (MHz)", value=10.0)
         pot_dbm = st.number_input(f"Potencia{i+1} (dBm)", value=0.0)
-        pot_mw = 10 ** (pot_dbm / 10)  # convertir a mW
+        pot_mw = 10 ** (pot_dbm / 10)  # Conversión a mW
         senales.append({"Fc": fc, "BW": bw, "P": pot_mw, "P_dBm": pot_dbm})
-
-# Constante de Boltzmann
-k = 1.38e-23  # J/K
-
-# Cálculo del ruido térmico para el mayor BW ingresado
-BW_max_Hz = max([s["BW"] for s in senales]) * 1e6  # Convertir de MHz a Hz
-P_ruido = k * temperatura * BW_max_Hz  # W
-P_ruido = max(P_ruido, 1e-20)  # evitar log(0)
-P_ruido_dBm = 10 * np.log10(P_ruido) + 30  # convertir a dBm
 
 # Gráfico
 fig, ax = plt.subplots()
