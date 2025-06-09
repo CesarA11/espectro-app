@@ -1,3 +1,4 @@
+# Cesar Aguilar - Univesidad Distrital Francisco Jose de Caldas
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
