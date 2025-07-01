@@ -1,4 +1,4 @@
-# Aplicación de Gráfico de Espectro
+## Aplicación de Gráfico de Espectro
 
 Esta aplicación permite visualizar señales en el espectro radioeléctrico, incluyendo el cálculo del ruido térmico en función de la temperatura y la representación gráfica de hasta tres señales con diferentes parámetros.
 
@@ -6,40 +6,51 @@ Esta aplicación permite visualizar señales en el espectro radioeléctrico, inc
 
 ## Funcionalidades
 
-- Cálculo del nivel de ruido térmico con base en la temperatura (K).
+- Cálculo del nivel de ruido térmico según la temperatura y el ancho de banda.
 - Visualización simultánea de hasta 3 señales.
 - Cálculo del espectro en potencia (dBm).
 - Gráfico con las señales y su conexión al piso de ruido.
-- Interfaz móvil opcional mediante MIT App Inventor conectada al backend.
 - También ejecutable desde cualquier navegador a través de [Streamlit Cloud](https://espectro-app-et4hxc9tsyxaz8subsdb7k.streamlit.app/).
+
+---
+
+## Parámetros de Entrada
+
+# Generales:
+- Temperatura (K)
+- Ancho de banda del medidor (Hz)
+- Ruido adicional del sistema (dB)
+
+# Señales:
+- Frecuencia central Fc (MHz)
+- Ancho de banda BW (MHz)
+- Potencia (dBm)
 
 ---
 
 ## ¿Cómo usarla?
 
-1. Desde tu celular abre la aplicación App Inventor conectada.
-2. Ingresa:
-   - Frecuencia central
-   - Ancho de banda
-   - Temperatura
-   - Potencia de las señales
-3. Presiona el botón “Generar gráfica”.
-4. El servidor devuelve la gráfica del espectro.
+1. Accede directamente desde cualquier navegador usando el siguiente enlace:
+[https://espectro-app-et4hxc9tsyxaz8subsdb7k.streamlit.app/](https://espectro-app-et4hxc9tsyxaz8subsdb7k.streamlit.app/) No requiere instalación, solo acceso a Internet..
+2. Ingresa los valores de temperatura, ancho de banda y señales.
+3. La gráfica se actualiza automáticamente con las señales dominantes por frecuencia.
+4. Observa el comportamiento de cada señal respecto al ruido térmico.
 
 ---
 
 ## Tecnologías utilizadas
 
-- MIT App Inventor (Interfaz móvil)
-- PythonAnywhere (Backend en Python)
-- HTTP Requests
-- Matplotlib (para graficar señales)
-
----
+- [Python 3](https://www.python.org/)
+- [Streamlit](https://streamlit.io/)
+- [Matplotlib](https://matplotlib.org/)
+- [NumPy](https://numpy.org/)
 
 ## Autor
 
-**Cesar Ivan Aguilar Huerfa** – Tecnologia en Sistematizacion de Datos
-Universidad Distrital Francisco Jose de Caldas – Redes Inalámbricas
+Cesar Ivan Aguilar Huerfa
+Redes Inalámbricas
+Tecnologia en Sistematizacion de Datos
+Universidad Distrital Francisco Jose de Caldas
+
 
 
