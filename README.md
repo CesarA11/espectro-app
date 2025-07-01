@@ -32,9 +32,10 @@ Esta aplicación permite visualizar señales en el espectro radioeléctrico, inc
 
 1. Accede directamente desde cualquier navegador usando el siguiente enlace:
 [https://espectro-app-et4hxc9tsyxaz8subsdb7k.streamlit.app/](https://espectro-app-et4hxc9tsyxaz8subsdb7k.streamlit.app/) No requiere instalación, solo acceso a Internet..
-2. Ingresa los valores de temperatura, ancho de banda y señales.
-3. La gráfica se actualiza automáticamente con las señales dominantes por frecuencia.
-4. Observa el comportamiento de cada señal respecto al ruido térmico.
+2. El código está disponible en GitHub desde el repositorio : [https://github.com/CesarA11/espectro-app.git] (espectro-app).
+3. Ingresa los valores de temperatura, ancho de banda y señales.
+4. La gráfica se actualiza automáticamente con las señales dominantes por frecuencia.
+5. Observa el comportamiento de cada señal respecto al ruido térmico.
 
 ---
 
